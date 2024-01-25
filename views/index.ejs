@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+  <div id="main">
+    <div id="top">
+      <form action="/create" method="post">
+        <input type="text" name="task" id="task" placeholder="Palce your task">
+        <input type="submit" id="submitbtn">
+      </form>
+    </div>
+    <div id="bottom">
+      <%tasks.forEach(function(task){ %>
+        <div class="task">
+          <h4><%=task.task%></h4>
+          <a href="update/<%=task._id%>"><i id="btn" class="ri-pencil-line"></i></a>
+          <a href="/delete/<%=task._id%>"><i id="btn" class="ri-delete-bin-line"></i></a>
+        </div>
+      <%})%>
+    </div>
+  </div>
+</body>
+</html>
